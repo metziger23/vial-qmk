@@ -549,7 +549,7 @@ static report_mouse_t phenom_apply_side_mode(report_mouse_t mrpt, split_pointing
                 accumulated_h[side] = 0;
             }
             if (get_split_pointing_side_invert_scroll(side)) {
-                mrpt.h = -mrpt.h;
+                mrpt.h = mrpt.h;
                 mrpt.v = -mrpt.v;
             }
             break;
