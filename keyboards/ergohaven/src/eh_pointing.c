@@ -410,6 +410,11 @@ void set_split_pointing_side_sens(split_pointing_side_t side, pointing_mode_t mo
 }
 
 bool get_split_pointing_side_invert_scroll(split_pointing_side_t side) {
+
+    if (side == SPLIT_POINTING_SIDE_LEFT) {
+        return true;
+    }
+
     if (side >= SPLIT_POINTING_SIDE_COUNT) {
         return false;
     }
