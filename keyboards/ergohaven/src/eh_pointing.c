@@ -340,6 +340,10 @@ static void toggle_split_pointing_side_sticky_override(split_pointing_side_t sid
 #endif
 
 pointing_mode_t get_split_pointing_side_mode(split_pointing_side_t side) {
+    if (side == SPLIT_POINTING_SIDE_LEFT) {
+        return POINTING_MODE_SCROLL;
+    }
+
     if (side >= SPLIT_POINTING_SIDE_COUNT) {
         return POINTING_MODE_NORMAL;
     }
@@ -365,6 +369,12 @@ uint8_t get_split_pointing_side_sens(split_pointing_side_t side, pointing_mode_t
     if (side >= SPLIT_POINTING_SIDE_COUNT) {
         return 1;
     }
+
+    if (side == SPLIT_POINTING_SIDE_LEFT)
+    {
+        return POINTING_MODE_SCROLL;
+    }
+
     switch (mode) {
         case POINTING_MODE_SNIPER:
             return kb_settings_phenom_devices.sens[side][0];
