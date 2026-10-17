@@ -534,6 +534,12 @@ static report_mouse_t phenom_apply_side_mode(report_mouse_t mrpt, split_pointing
         return mrpt;
     }
 
+    if (pmode == POINTING_MODE_SNIPER) {
+        mrpt.x /= 4;
+        mrpt.y /= 4;
+        return mrpt;
+    }
+
     accumulated_h[side] += mrpt.x;
     accumulated_v[side] += mrpt.y;
 
