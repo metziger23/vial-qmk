@@ -98,7 +98,7 @@ __attribute__((weak)) kb_settings_pointing_t get_settings_pointing_default(void)
         .acceleration  = false,
         .orientation   = ROT_0,
         .mode          = 0,
-        .sticky_mode   = true,
+        .sticky_mode   = false,
         .led_blinks    = false,
         .invert_text   = false,
         .invert_scroll_h = false,
@@ -120,7 +120,7 @@ kb_settings_split_pointing_t get_split_pointing_settings_default(void) {
         .auto_mouse_enable = PHENOM_AUTO_MOUSE_SUPPORTED_MODES_MASK,
         .auto_mouse_layer  = AUTO_MOUSE_DEFAULT_LAYER,
 #ifdef EH_KEYBOARD_SPLIT_POINTING_V2
-        .sticky_mode            = {true, true},
+        .sticky_mode            = {false, false},
         .side_auto_mouse_enable = {PHENOM_AUTO_MOUSE_SUPPORTED_MODES_MASK, PHENOM_AUTO_MOUSE_SUPPORTED_MODES_MASK},
         .side_auto_mouse_layer  = {AUTO_MOUSE_DEFAULT_LAYER, AUTO_MOUSE_DEFAULT_LAYER},
         .invert_text            = {false, false},
@@ -583,6 +583,7 @@ bool get_split_pointing_side_sticky_mode(split_pointing_side_t side) {
     if (side >= SPLIT_POINTING_SIDE_COUNT) {
         return true;
     }
+    return false;
 #ifdef EH_KEYBOARD_SPLIT_POINTING_V2
     return kb_settings_phenom_devices.sticky_mode[side] != 0;
 #else
@@ -594,6 +595,7 @@ void set_split_pointing_side_sticky_mode(split_pointing_side_t side, bool sticky
     if (side >= SPLIT_POINTING_SIDE_COUNT) {
         return;
     }
+    return;
 #ifdef EH_KEYBOARD_SPLIT_POINTING_V2
     kb_settings_split_pointing_t new_config = kb_settings_phenom_devices;
     new_config.sticky_mode[side]           = sticky_mode;
@@ -926,12 +928,14 @@ bool get_acceleration(void) {
 }
 
 void set_sticky_mode(bool sticky_mode) {
+    sticky_mode = false;
     kb_settings_pointing_t new_config = kb_settings_pointing;
     new_config.sticky_mode            = sticky_mode;
     kb_settings_pointing_update(new_config);
 }
 
 bool get_sticky_mode(void) {
+    return false;
     return kb_settings_pointing.sticky_mode;
 }
 
