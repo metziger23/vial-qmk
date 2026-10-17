@@ -415,7 +415,8 @@ static int layer_name_set(const qmk_settings_proto_t *proto, const void *setting
 }
 
 #if !defined(EH_KEYBOARD_SPLIT_POINTING_V2) && !defined(EH_QMK_SETTINGS_SIMPLE_TOUCHPAD) && !defined(EH_QMK_SETTINGS_SIMPLE_TRACKBALL)
-static const uint16_t phenom_trackball_cpi_table[] = {200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200};
+// static const uint16_t phenom_trackball_cpi_table[] = {200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200};
+static const uint16_t phenom_trackball_cpi_table[] = {400, 800, 1200, 1600, 2000, 2400, 2800, 3200, 3600, 4000, 4400, 4800, 5200, 5600, 6000, 6400};
 static const uint16_t phenom_touchpad_cpi_table[]  = {100, 200, 300, 400, 500, 600, 700, 800, 900, 1000};
 #endif
 

@@ -55,7 +55,8 @@ typedef union {
     } __attribute__((packed));
 } phenom_via_config_t;
 
-static const uint16_t phenom_trackball_cpi_table[] = {200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200};
+// static const uint16_t phenom_trackball_cpi_table[] = {200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200};
+static const uint16_t phenom_trackball_cpi_table[] = {400, 800, 1200, 1600, 2000, 2400, 2800, 3200, 3600, 4000, 4400, 4800, 5200, 5600, 6000, 6400};
 static const uint16_t phenom_touchpad_cpi_table[]  = {100, 200, 300, 400, 500, 600, 700, 800, 900, 1000};
 
 #define PHENOM_LAYOUT_SCHEMA_V2 (1u << 31)
