@@ -511,9 +511,9 @@ report_mouse_t pointing_device_driver_get_report(report_mouse_t mouse_report) {
     return phenom_rotate_report(mouse_report, phenom_get_local_orientation());
 }
 
-static bool phenom_report_has_motion(report_mouse_t report) {
-    return abs(report.x) >= 1 || abs(report.y) >= 1 || abs(report.h) >= 1 || abs(report.v) >= 1 || report.buttons;
-}
+// static bool phenom_report_has_motion(report_mouse_t report) {
+//     return abs(report.x) >= 1 || abs(report.y) >= 1 || abs(report.h) >= 1 || abs(report.v) >= 1 || report.buttons;
+// }
 
 static report_mouse_t phenom_apply_side_mode(report_mouse_t mrpt, split_pointing_side_t side) {
     static int32_t accumulated_h[SPLIT_POINTING_SIDE_COUNT] = {0};

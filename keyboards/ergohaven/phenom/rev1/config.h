@@ -62,8 +62,8 @@
 #define VIA_EEPROM_LAYOUT_OPTIONS_SIZE 4
 #define VIA_EEPROM_LAYOUT_OPTIONS_DEFAULT 0x80444494
 
-#define POINTING_DEVICE_AUTO_MOUSE_ENABLE
-#define AUTO_MOUSE_DEFAULT_LAYER 4
+// #define POINTING_DEVICE_AUTO_MOUSE_ENABLE
+// #define AUTO_MOUSE_DEFAULT_LAYER 4
 #define POINTING_DEVICE_DEBUG
 
 // phenom-text-mode-v0.0.1: enable split left/right pointing modes and map Text mode movement to arrow key taps.
