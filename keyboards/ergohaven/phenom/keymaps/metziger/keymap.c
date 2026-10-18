@@ -22,11 +22,11 @@
 // phenom-layout-v0.0.3: align Phenom layers with the layout map; layer 4 uses common pointing modes.
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
-KC_ESC,  KC_1,         KC_2,          KC_3,              KC_4,            KC_5,              KC_6,            KC_7,            KC_8,             KC_9,          KC_0,         KC_MINS,
+KC_GRV,  KC_1,         KC_2,          KC_3,              KC_4,            KC_5,              KC_6,            KC_7,            KC_8,             KC_9,          KC_0,         KC_EQL,
 KC_LBRC, KC_Q,         KC_W,          KC_F,              LT(_REPL,KC_P),  KC_B,              KC_J,            LT(_REPR,KC_L),  KC_U,             KC_Y,          KC_QUOT,      KC_RBRC,
 KC_COLN, LGUI_T(KC_A), LALT_T(KC_R),  LCTL_T(KC_S),      LSFT_T(KC_T),    RGUI_T(KC_G),      RGUI_T(KC_M),    LSFT_T(KC_N),    LCTL_T(KC_E),     LALT_T(KC_I),  LGUI_T(KC_O), KC_SCLN,
 KC_LPRN, KC_Z,         KC_X,          KC_C,              KC_D,            KC_V,              KC_K,            KC_H,            KC_COMM,          KC_DOT,        KC_SLSH,      KC_RPRN,
-         LCTL(KC_6),   LSFT(KC_QUOT), LT(_MEDIA,KC_ESC), LT(_NAV,KC_SPC), LT(_MOUSE,KC_TAB), LT(_SYM,KC_ENT), LT(_NUM,KC_BSPC), LT(_FUN,KC_DEL), LSFT(KC_QUOT), LCTL(KC_6),
+         KC_AMPR, KC_PLUS, LT(_MEDIA,KC_ESC), LT(_NAV,KC_SPC), LT(_MOUSE,KC_TAB), LT(_SYM,KC_ENT), LT(_NUM,KC_BSPC), LT(_FUN,KC_DEL),            KC_LBRC,       KC_RBRC,
                                                                                     KC_MUTE, KC_MUTE
     ),
 
