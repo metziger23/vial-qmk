@@ -5,9 +5,9 @@
 
 #define _MEDIA _LOWER
 #define _NAV   _RAISE
-#define _SYM   _ADJUST
+#define VIM_   _ADJUST
 #define _MOUSE _FOUR
-#define _NUM   _FIVE
+#define _SYM   _FIVE
 #define _FUN   _SIX
 #define _REPL  _SEVEN
 #define _REPR  _EIGHT
@@ -26,7 +26,7 @@ KC_GRV,  KC_1,         KC_2,          KC_3,              KC_4,            KC_5, 
 KC_LBRC, KC_Q,         KC_W,          KC_F,              LT(_REPL,KC_P),  KC_B,              KC_J,            LT(_REPR,KC_L),  KC_U,             KC_Y,          KC_QUOT,      KC_RBRC,
 KC_COLN, LGUI_T(KC_A), LALT_T(KC_R),  LCTL_T(KC_S),      LSFT_T(KC_T),    RGUI_T(KC_G),      RGUI_T(KC_M),    LSFT_T(KC_N),    LCTL_T(KC_E),     LALT_T(KC_I),  LGUI_T(KC_O), KC_SCLN,
 KC_LPRN, KC_Z,         KC_X,          KC_C,              KC_D,            KC_V,              KC_K,            KC_H,            KC_COMM,          KC_DOT,        KC_SLSH,      KC_RPRN,
-         KC_DQUO, KC_QUES, LT(_MEDIA,KC_ESC), LT(_NAV,KC_SPC), LT(_MOUSE,KC_TAB), LT(_SYM,KC_ENT), LT(_NUM,KC_BSPC), LT(_FUN,KC_DEL),            KC_LCBR,       KC_RCBR,
+         KC_DQUO, KC_QUES, LT(_MEDIA,KC_ESC), LT(_NAV,KC_SPC), LT(_MOUSE,KC_TAB), LT(VIM_,KC_ENT), LT(_SYM,KC_BSPC), LT(_FUN,KC_DEL),            KC_LCBR,       KC_RCBR,
                                                                                     KC_MUTE, KC_MUTE
     ),
 
@@ -48,7 +48,7 @@ KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_INS,  KC_HOME, KC_PGDN,
                                              _______, _______
     ),
 
-	[_SYM] = LAYOUT(
+	[VIM_] = LAYOUT(
 KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
 KC_LCBR, KC_LCBR, KC_AMPR, KC_ASTR, KC_LPRN, KC_RCBR, KC_NO,   KC_NO,   KC_NO,   KC_NO,   QK_BOOT, KC_RCBR,
 KC_TRNS, KC_COLN, KC_DLR,  KC_PERC, KC_CIRC, KC_PLUS, KC_RGUI, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, KC_TRNS,
@@ -65,7 +65,7 @@ KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   EH_TXT,  MS_BTN4, EH_TXT, 
 _______,  _______,  _______,  _______,  _______, MS_BTN2, MS_BTN1,  MS_BTN3,  _______,  _______,
 										_______, _______
     ),
-	[_NUM] = LAYOUT(
+	[_SYM] = LAYOUT(
 KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     KC_MINS,
 KC_LBRC, KC_TILD, KC_AMPR, KC_PLUS, KC_EXLM, KC_AT,   KC_TRNS, KC_TRNS, KC_BSPC, KC_DEL,  KC_QUOT,  KC_RBRC,
 KC_COLN, KC_CIRC, KC_EQL,  KC_UNDS, KC_DLR,  KC_ASTR, KC_RGUI, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, KC_SCLN,
@@ -88,7 +88,7 @@ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS,         K
 KC_TRNS, KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,            KC_J,            KC_L,             KC_U,    KC_Y,    KC_QUOT, KC_TRNS,
 KC_TRNS, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_RGUI,         KC_M,            KC_N,             KC_E,    KC_I,    KC_O,    KC_TRNS,
 KC_TRNS, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,            KC_K,            KC_H,             KC_COMM, KC_DOT,  KC_SLSH, KC_TRNS,
-_______, _______, KC_LSFT, KC_LSFT, KC_LSFT, LT(_SYM,KC_ENT), LT(_NUM,KC_BSPC), LT(_FUN,KC_DEL), _______, _______,
+_______, _______, KC_LSFT, KC_LSFT, KC_LSFT, LT(VIM_,KC_ENT), LT(_SYM,KC_BSPC), LT(_FUN,KC_DEL), _______, _______,
 									_______, _______
 	),
 
@@ -109,8 +109,8 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [_MEDIA] = {ENCODER_CCW_CW(RGB_VAD, RGB_VAI), ENCODER_CCW_CW(RGB_VAD, RGB_VAI)},
     [_NAV] = {ENCODER_CCW_CW(KC_LEFT, KC_RIGHT), ENCODER_CCW_CW(KC_LEFT, KC_RIGHT)},
     [_MOUSE]  = {ENCODER_CCW_CW(KC_WH_D, KC_WH_U), ENCODER_CCW_CW(KC_WH_D, KC_WH_U)},
-    [_SYM]  = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
-    [_NUM] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
+    [VIM_]  = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
+    [_SYM] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
     [_FUN] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
     [_REPL] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
     [_REPR] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
@@ -155,7 +155,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     const bool is_alt_on = (get_mods() | get_oneshot_mods()) & MOD_MASK_ALT;
     const bool is_gui_on = (get_mods() | get_oneshot_mods()) & MOD_MASK_GUI;
 
-    const bool switch_lang = record->event.pressed && keycode == LT(_NUM,KC_BSPC) && record->tap.count
+    const bool switch_lang = record->event.pressed && keycode == LT(_SYM,KC_BSPC) && record->tap.count
         && is_shift_on && !is_ctrl_on && !is_alt_on && !is_gui_on;
 
     if (switch_lang) {
@@ -222,7 +222,7 @@ int get_ru_sym(int eng_sym) {
         case KC_K: return RU_YO;
         case KC_H: return RU_SOFT;
         case KC_COMMA: return RU_U;
-        case KC_DOT: return IS_LAYER_ON(_NUM) ? (is_shift_on ? RU_LPRN : RU_DOT) : RU_YU;
+        case KC_DOT: return IS_LAYER_ON(_SYM) ? (is_shift_on ? RU_LPRN : RU_DOT) : RU_YU;
         case KC_SLSH: return RU_SHA;
 
         case KC_LBRC: return IS_LAYER_ON(_BASE) ? RU_SHCH : is_shift_on ? S(RALT(KC_LPRN)) : RALT(KC_GRV);
@@ -255,7 +255,7 @@ int get_ru_sym(int eng_sym) {
 #define ko_make_ru_sft_num(num) \
 ((const key_override_t){                                                                \
   .trigger_mods      = MOD_MASK_SHIFT,\
-  .layers            = ~_NUM,\
+  .layers            = ~_SYM,\
   .suppressed_mods   = MOD_MASK_SHIFT,\
   .options           = ko_options_default,\
   .negative_mod_mask = 0,\
