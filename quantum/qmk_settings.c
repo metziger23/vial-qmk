@@ -234,8 +234,23 @@ void qmk_settings_reset(void) {
 
     QS.combo_term = COMBO_TERM;
     QS.tapping_term = TAPPING_TERM;
-    QS.tapping_v2 = 0;
-    QS.quick_tap_term = TAPPING_TERM;
+	// NOTE:ai generated
+	// settings for ergohaven phenom ported from keyboards/ergohaven/phenom/keymaps/metziger/config.h
+    QS.tapping_v2 = 0
+#ifdef PERMISSIVE_HOLD
+        | (1 << QS_tapping_permissive_hold_bit)
+#endif
+#ifdef HOLD_ON_OTHER_KEY_PRESS
+        | (1 << QS_tapping_hold_on_other_key_press_bit)
+#endif
+#ifdef RETRO_TAPPING
+        | (1 << QS_tapping_retro_tapping_bit)
+#endif
+#ifdef CHORDAL_HOLD
+        | (1 << QS_tapping_chordal_hold_bit)
+#endif
+        ;
+    QS.quick_tap_term = QUICK_TAP_TERM;
     QS.tap_code_delay = TAP_CODE_DELAY;
     QS.tap_hold_caps_delay = TAP_HOLD_CAPS_DELAY;
     QS.tapping_toggle = TAPPING_TOGGLE;
